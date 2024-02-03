@@ -3,7 +3,10 @@ package main
 import (
 	"net/http"
 	"github.com/gorilla/mux"
+	"log"
 )
+
+const PORT = ":8080"
 
 func main(){
 	router := mux.NewRouter();
@@ -17,5 +20,7 @@ func main(){
 	membersRouter.HandleFunc("/name/{firstName}-{secondName}", memberByName).Methods("GET")
 	membersRouter.HandleFunc("/type/{type}", membersByType).Methods("GET")
 
-	http.ListenAndServe(":8080", router)
+	log.Printf("Starting server on %s\n", PORT)
+	err := http.ListenAndServe(PORT, router)
+	log.Fatal(err)
 }
