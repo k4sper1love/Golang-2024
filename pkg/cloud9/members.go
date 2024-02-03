@@ -1,4 +1,4 @@
-package cloud9
+package cloud
 
 type Member struct {
 	Type string `json:"type"`
