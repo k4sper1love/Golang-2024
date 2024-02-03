@@ -18,7 +18,7 @@ func healthCheck(w http.ResponseWriter, r *http.Request){
 }
 
 func members(w http.ResponseWriter, r *http.Request){
-	members := team.getMembers()
+	members := team.GetMembers()
 
 	var response Response
 	response.Members = members
@@ -30,7 +30,7 @@ func members(w http.ResponseWriter, r *http.Request){
 
 func membersByType(w http.ResponseWriter, r *http.Request) {
 	memberType := mux.Vars(r)["type"]
-	members := team.getMembers()
+	members := team.GetMembers()
 
 	var response Response
 	for _, member := range members {
@@ -50,7 +50,7 @@ func membersByType(w http.ResponseWriter, r *http.Request) {
 
 func memberByNickname(w http.ResponseWriter, r *http.Request){
 	nickname := mux.Vars(r)["nickname"]
-	members := team.getMembers()
+	members := team.GetMembers()
 
 	for _, member := range members {
 		if member.Nickname == nickname{
@@ -66,7 +66,7 @@ func memberByNickname(w http.ResponseWriter, r *http.Request){
 func memberByName(w http.ResponseWriter, r *http.Request){
 	vars := mux.Vars(r)
 	firstName, secondName := vars["firstName"], vars["secondName"]
-	members := team.getMembers()
+	members := team.GetMembers()
 
 	for _, member := range members {
 		if member.FirstName == firstName && member.SecondName == secondName {

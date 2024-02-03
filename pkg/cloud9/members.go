@@ -8,7 +8,7 @@ type Member struct {
 	SecondName string `json:"secondname"`
 }
 
-func getMembers() []Member{
+func GetMembers() []Member{
 	var members []Member
 	members = append(members, Member{Type: "Player", Role: "Rifler", Nickname: "HObbit", FirstName: "Abay", SecondName: "Khassenov"})
 	members = append(members, Member{Type: "Player", Role: "Rifler", Nickname: "Ax1Le", FirstName: "Sergey", SecondName: "Rykhtorov"})
