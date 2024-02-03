@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"github.com/gorilla/mux"
 	"fmt"
-	team "Golang-2024/pkg/cloud9"
+	team "github.com/k4sper1love/go-2024/pkg/cloud9"
 )
 
 type Response struct {
